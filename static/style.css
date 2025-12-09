@@ -81,10 +81,10 @@ hr{
     }
     
     h1 {
-        font-size: 1.8rem; /* Make the title slightly smaller so it fits */
+        font-size: 1.8rem;
     }
 
     button {
-        width: 90%;      /* Make button easier to tap on mobile */
+        width: 90%;
     }
 }
