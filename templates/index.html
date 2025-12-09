@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Strength Checker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+</head>
+<body>
+    <h1>Password Strength Checker</h1>
+    <form action="#" method="post">
+        <input type="text" name = "user_password" id="user_password" placeholder="Evaluate your password:">
+        <button type="submit">Check Strength</button>
+    </form>
+
+    <hr>
+
+    <div class="display_result">
+        {% if crack_time %}
+            <h2>Result:</h2>
+            {% if crack_time == "Please enter a password" %}
+                <p>{{ crack_time }}</p>
+
+            {% elif crack_time == "Invalid password input" %}
+                <p>Please enter a valid password (letters, digits, and symbols only).</p>
+
+            {% elif crack_time == "Instant Crack" %}
+                <p>Your password is extremely weak and can be cracked instantly.</p>
+
+            {% else %}
+                <p>It would take approximately {{ crack_time }} to crack this password.</p>
+            {% endif %}
+
+        {% endif %}
+    </div>
+</body>
+</html>
